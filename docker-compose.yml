@@ -13,7 +13,7 @@ services:
     volumes:
       - ./volumes/mongodb:/data/db
     networks:
-      - mongo-db-network
+      - mongo-network
 
   mongo-express:
     image: mongo-express
@@ -30,10 +30,10 @@ services:
     links:
       - mongo
     networks:
-      - mongo-db-network
+      - mongo-network
 
 networks: 
-    mongo-db-network:
+    mongo-network:
       driver: bridge
 
       
